@@ -1,0 +1,13 @@
+<ion-card>
+  <ion-card-content>
+    <ion-card-title>
+      {{title}}
+    </ion-card-title>
+    <ion-grid>
+      <ion-row *ngFor="let player of players$ | async">
+        <ion-col col-6>{{player.name}}</ion-col>
+        <ion-col col-6>{{player.points}}</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

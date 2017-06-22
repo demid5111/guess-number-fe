@@ -1,9 +1,14 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
-<h2>You need to provide the number of players and the name </h2>
+<ion-card *ngIf="instruction">
+  <ion-card-content>
+    <ion-card-title>
+      {{title}}
+    </ion-card-title>
+    <p>
+      {{instruction}}
+    </p>
+  </ion-card-content>
+</ion-card>
+
 
 <ion-list>
 

@@ -1,23 +1,32 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, ErrorHandler} from '@angular/core';
+import {StoreModule} from '@ngrx/store';
 
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {IonicStorageModule} from '@ionic/storage';
 
 import {AppComponent} from './app.component';
-import {SharedComponentsModule} from './shared/components/shared-components.module';
 import {AppRoutingModule} from './app-routing.module';
-import {StartPageComponent} from './start-page/start-page.component';
 
-import {IonicStorageModule} from '@ionic/storage';
+import {SharedComponentsModule} from './shared/components/shared-components.module';
+
+import {StartPageComponent} from './start-page/start-page.component';
+import {GamePageComponent} from 'app/game-page/game-page.component';
+import {reducer} from './shared/reducer/root.reducer';
+import {PlayersListComponent} from './game-page/players-list/players-list.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartPageComponent
+    StartPageComponent,
+    GamePageComponent,
+    PlayersListComponent
   ],
   imports: [
     BrowserModule,
     SharedComponentsModule,
+    StoreModule.provideStore(reducer),
     IonicModule.forRoot(AppComponent),
     IonicStorageModule.forRoot(),
     AppRoutingModule
@@ -25,7 +34,8 @@ import {IonicStorageModule} from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     AppComponent,
-    StartPageComponent
+    StartPageComponent,
+    GamePageComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler}

@@ -1,0 +1,34 @@
+<ion-card *ngIf="instruction">
+  <ion-card-content>
+    <ion-card-title>
+      This is the game dashboard!
+    </ion-card-title>
+    <p>
+      {{instruction}}
+    </p>
+  </ion-card-content>
+</ion-card>
+
+<ion-list>
+
+  <ion-item>
+    <ion-label>Type of your opponent's number</ion-label>
+    <ion-select [(ngModel)]="guessType">
+      <ion-option value="odd">Odd</ion-option>
+      <ion-option value="even">Even</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Your number</ion-label>
+    <ion-input type="number" [(ngModel)]="nextNumber"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button (click)="submitResults()">Submit results</button>
+  </ion-item>
+
+</ion-list>
+
+<gn-players-list></gn-players-list>
+

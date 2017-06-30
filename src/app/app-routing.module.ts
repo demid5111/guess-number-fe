@@ -2,22 +2,28 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
-import {StartPageComponent} from 'app/start-page/start-page.component';
 import {GamePageComponent} from './game-page/game-page.component';
+import {CreateGamePageComponent} from './create-game-page/create-game-page.component';
+import {JoinGamePageComponent} from 'app/join-game-page/join-game-page.component';
 
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/start',
+    redirectTo: 'create',
     pathMatch: 'full'
   },
   {
-    path: 'start',
+    path: 'create',
     pathMatch: 'full',
-    component: StartPageComponent
+    component: CreateGamePageComponent
   },
   {
-    path: 'game',
+    path: 'join',
+    pathMatch: 'full',
+    component: JoinGamePageComponent
+  },
+  {
+    path: 'game/:id',
     pathMatch: 'full',
     component: GamePageComponent
   },

@@ -10,16 +10,19 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {SharedComponentsModule} from './shared/components/shared-components.module';
 
-import {StartPageComponent} from './start-page/start-page.component';
+import {CreateGamePageComponent} from './create-game-page/create-game-page.component';
 import {GamePageComponent} from 'app/game-page/game-page.component';
 import {reducer} from './shared/reducer/root.reducer';
 import {PlayersListComponent} from './game-page/players-list/players-list.component';
+import {JoinGamePageComponent} from './join-game-page/join-game-page.component';
+import {GameGeneratorService} from './shared/services/game-generator.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    StartPageComponent,
+    CreateGamePageComponent,
+    JoinGamePageComponent,
     GamePageComponent,
     PlayersListComponent
   ],
@@ -34,11 +37,13 @@ import {PlayersListComponent} from './game-page/players-list/players-list.compon
   bootstrap: [IonicApp],
   entryComponents: [
     AppComponent,
-    StartPageComponent,
+    CreateGamePageComponent,
+    JoinGamePageComponent,
     GamePageComponent
   ],
   providers: [
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GameGeneratorService,
   ]
 })
 export class AppModule {

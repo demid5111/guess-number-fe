@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
-import {Observable} from "rxjs/Observable";
-import {Player} from "../../shared/model/player.model";
-import {Store} from "@ngrx/store";
+import {Store} from '@ngrx/store';
+
+import {Observable} from 'rxjs/Observable';
+
+import {Player} from '../../shared/model/player.model';
 
 import * as fromRoot from '../../shared/reducer/root.reducer';
 

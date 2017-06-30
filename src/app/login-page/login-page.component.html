@@ -1,0 +1,10 @@
+<div class="modal-dialog">
+  <div class="loginmodal-container" *ngIf="!user">
+    <h1>Login to Your Account</h1><br>
+    <button class="login loginmodal-submit" (click)="login()">Login With Google</button>
+  </div>
+  <div class="loginmodal-container" *ngIf="user">
+    <h1>Hi, {{user.displayName}}</h1><br>
+    <button class="login loginmodal-submit" (click)="logout()">Logout from Google</button>
+  </div>
+</div>

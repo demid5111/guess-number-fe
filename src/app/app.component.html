@@ -1,1 +1,3 @@
 <router-outlet></router-outlet>
+
+<div *ngIf="items$ | async">{{items$ | async | json}}</div>

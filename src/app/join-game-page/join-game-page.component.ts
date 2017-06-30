@@ -16,7 +16,7 @@ export class JoinGamePageComponent {
     this.title = 'Welcome to Guess The Number Game';
   }
 
-  enterGame() {
+  enterNewGame() {
     console.log('Entered existing game!');
     this.router.navigateByUrl('game/wefefwegewrgwg');
   }
